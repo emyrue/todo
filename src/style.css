@@ -3,3 +3,77 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+.to-do {
+  border: 1px solid gray;
+  width: 50%;
+  margin: auto;
+  margin-top: 30px;
+}
+
+/* heading */
+
+.heading {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border: 1px solid gray;
+}
+
+h1 {
+  font-family: sans-serif;
+  font-weight: normal;
+  font-size: 20px;
+}
+
+/* input */
+
+.new-item {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid gray;
+}
+
+.new-list-item {
+  border: none;
+  width: 100%;
+}
+
+.new-list-item::placeholder {
+  font-style: italic;
+}
+
+/* list */
+
+.list {
+  list-style: none;
+}
+
+.list-item {
+  padding: 10px;
+  border: 1px solid gray;
+  position: relative;
+}
+
+label {
+  font-family: sans-serif;
+}
+
+.dots {
+  position: absolute;
+  right: 0;
+}
+
+button {
+  border: 1px solid gray;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  font-family: sans-serif;
+  color: gray;
+}
+
+button:hover {
+  text-decoration: underline;
+}

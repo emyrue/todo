@@ -4,10 +4,20 @@
         <title>To-do list</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="./style.css">
         <script type="module" src="./index.js"></script>
     </head>
     <body>
-        <ul class="list"></ul>
+        <section class="to-do">
+            <div class="heading">
+                <h1>Today's To Do</h1>
+            </div>
+            <form>
+                <div class="new-item">
+                    <input class="new-list-item" type="text" placeholder="Add to your list">
+                </div>
+                <ul class="list"></ul>
+                <button class="clear" type="submit">Clear All Completed</button>
+            </form>
+        </section>
     </body>
 </html>
