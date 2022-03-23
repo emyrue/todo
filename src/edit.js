@@ -1,4 +1,5 @@
 import { toDoList, editButtons } from "./index.js";
+import createList from "./index.js";
 import remove from './delete.svg';
 
 const trash = new Image();
@@ -12,6 +13,15 @@ export default function editItems(toDo) {
         <input class="edit" type="text" value="${toDo.list[i].description}">
         <img class="trash" src=${remove}>
       `;
+
+      const input = document.querySelector('.edit');
+      input.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+          toDo.list[i].description = input.value;
+          toDo.store();
+          createList(toDo);
+        }
+      });
     });
   }
 }
