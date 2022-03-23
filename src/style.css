@@ -44,6 +44,10 @@ h1 {
   font-style: italic;
 }
 
+.new-list-item:focus {
+  outline: none;
+}
+
 /* list */
 
 .list {
@@ -60,10 +64,30 @@ label {
   font-family: sans-serif;
 }
 
-.dots {
+.dots,
+.trash {
   position: absolute;
-  right: 0;
+  right: 5px;
 }
+
+.edit {
+  border: none;
+  background-color: lightyellow;
+  font-family: sans-serif;
+  font-size: 16px;
+  width: 95%;
+  color: #808080;
+}
+
+.edit:focus {
+  outline: none;
+}
+
+.color {
+  background-color: lightyellow;
+}
+
+/* button */
 
 button {
   border: 1px solid gray;
