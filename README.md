@@ -18,7 +18,7 @@ To get a local copy up and running follow these simple steps:
 2. Type these commands into the terminal: 
  - git clone https://github.com/emyrue/todo.git
  - cd todo
-3. Open dist/index.html with a live server.
+ - open dist/index.html
 
 ## Authors
 
