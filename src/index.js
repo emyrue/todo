@@ -2,24 +2,22 @@ import './style.css';
 import renew from './renew.svg';
 import enterKey from './return.svg';
 import more from './more.svg';
-import ListItem from './listItem.js';
 import List from './list.js';
+import makeNew from './add.js';
+import editItems from './edit.js';
 
-const toDoList = document.querySelector('.list');
+export const toDoList = document.querySelector('.list');
 const heading = document.querySelector('.heading');
 const newItem = document.querySelector('.new-item');
+const newListItem = document.querySelector('.new-list-item');
 const refresh = new Image();
 refresh.src = renew;
-const enter = new Image();
+export const enter = new Image();
 enter.src = enterKey;
-const moreDots = new Image();
+export const moreDots = new Image();
 moreDots.src = more;
 const toDo = new List();
-const toDoItem1 = new ListItem('wash the dishes', false, 0);
-const toDoItem2 = new ListItem('complete To Do list project', false, 1);
-toDo.add(toDoItem1);
-toDo.add(toDoItem2);
-
+toDo.checkStorage();
 heading.appendChild(refresh);
 newItem.appendChild(enter);
 
@@ -31,13 +29,27 @@ function display(index) {
   `;
 }
 
-for (let i = 0; i < toDo.list.length; i += 1) {
-  const newElement = document.createElement('li');
-  newElement.className = 'list-item';
-  for (let j = 0; j < toDo.list.length; j += 1) {
-    if (toDo.list[j].index === i) {
-      newElement.innerHTML = display(j);
-    }
+export default function createList(element, list) {
+  element.innerHTML = ``;
+  list.sort();
+  for (let i = 0; i < list.list.length; i += 1) {
+    const newElement = document.createElement('li');
+    newElement.className = 'list-item';
+    newElement.innerHTML = display(i);
+    element.appendChild(newElement);
   }
-  toDoList.appendChild(newElement);
 }
+
+createList(toDoList, toDo);
+
+export const editButtons = document.querySelectorAll('.dots');
+
+/* add new items */
+
+makeNew(newListItem, toDo);
+
+/* remove items */
+
+/* edit items */
+
+editItems(toDo);
