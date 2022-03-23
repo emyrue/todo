@@ -13,12 +13,8 @@ export default function removeItem(toDo) {
   }
 
   button.addEventListener('click', () => {
-    for (let i = 0; i < toDo.list.length; i += 1) {
-      if (toDo.list[i].completed === true) {
-        toDo.remove(i);
-        toDo.fixIndex();
-      }
-    }
+    toDo.list = toDo.list.filter((el) => !el.completed);
+    toDo.fixIndex();
     toDo.store();
     window.location.reload();
   });
