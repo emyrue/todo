@@ -12,7 +12,7 @@ export default class List {
   }
 
   sort() {
-    let newList = [];
+    const newList = [];
     for (let i = 0; i < this.list.length; i += 1) {
       for (let j = 0; j < this.list.length; j += 1) {
         if (this.list[j].index === i) {
@@ -21,6 +21,12 @@ export default class List {
       }
     }
     this.list = newList;
+  }
+
+  fixIndex() {
+    for (let i = 0; i < this.list.length; i += 1) {
+      this.list[i].index = i;
+    }
   }
 
   store() {
