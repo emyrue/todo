@@ -11,7 +11,7 @@ moreDots.src = more;
 function display(index, toDo) {
   return `
     <input class="checkbox" type="checkbox" name="checkbox">
-    <label for="checkbox">${toDo.list[index].description}</label>
+    <label class="task" for="checkbox">${toDo.list[index].description}</label>
     <img class="dots" src=${moreDots.src}>
   `;
 }
