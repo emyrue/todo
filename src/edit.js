@@ -18,8 +18,8 @@ export default function editItems(toDo) {
       input[i].focus();
       for (let j = 0; j < input.length; j += 1) {  
         input[j].addEventListener('keypress', (e) => {
-          if ((e.key === 'Enter') && input.value) {
-            toDo.list[i].description = input.value;
+          if ((e.key === 'Enter') && input[j].value) {
+            toDo.list[i].description = input[j].value;
             toDo.store();
             createList(toDo);
           }
