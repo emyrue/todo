@@ -16,7 +16,7 @@ export default function editItems(toDo) {
 
       const input = document.querySelectorAll('.task');
       input[i].focus();
-      for (let j = 0; j < input.length; j += 1) {  
+      for (let j = 0; j < input.length; j += 1) {
         input[j].addEventListener('keypress', (e) => {
           if ((e.key === 'Enter') && input[j].value) {
             toDo.list[i].description = input[j].value;
@@ -27,7 +27,6 @@ export default function editItems(toDo) {
       }
 
       const trashCan = document.querySelectorAll('.dots');
-      let clicked = false;
       const editTask = document.querySelector('.edit');
       editTask.addEventListener('focusout', () => {
         trashCan[i].addEventListener('click', () => {

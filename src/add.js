@@ -1,5 +1,5 @@
 import ListItem from './listItem.js';
-import List from './list';
+import List from './list.js';
 import enterKey from './return.svg';
 import more from './more.svg';
 
