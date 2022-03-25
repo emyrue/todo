@@ -27,11 +27,19 @@ export default function editItems(toDo) {
       }
 
       const trashCan = document.querySelectorAll('.dots');
-      trashCan[i].addEventListener('click', () => {
-        toDo.remove(i);
-        toDo.fixIndex();
-        toDo.store();
-        window.location.reload();
+      let clicked = false;
+      const editTask = document.querySelector('.edit');
+      editTask.addEventListener('focusout', () => {
+        trashCan[i].addEventListener('click', () => {
+          toDo.remove(i);
+          toDo.fixIndex();
+          toDo.store();
+          clicked = true;
+          window.location.reload();
+        });
+        document.addEventListener('click', () => {
+          window.location.reload();
+        });
       });
     });
   }

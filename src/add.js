@@ -1,14 +1,16 @@
 import ListItem from './listItem.js';
+import List from './list';
 import enterKey from './return.svg';
 import more from './more.svg';
 
+export const toDo = new List();
 export const toDoList = document.querySelector('.list');
 const enter = new Image();
 enter.src = enterKey;
 const moreDots = new Image();
 moreDots.src = more;
 
-function display(index, toDo) {
+export function display(index, toDo) {
   return `
     <input class="checkbox" type="checkbox" name="checkbox">
     <label class="task" for="checkbox">${toDo.list[index].description}</label>
