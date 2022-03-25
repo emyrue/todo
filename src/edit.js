@@ -33,7 +33,6 @@ export default function editItems(toDo) {
           toDo.remove(i);
           toDo.fixIndex();
           toDo.store();
-          clicked = true;
           window.location.reload();
         });
         document.addEventListener('click', () => {
