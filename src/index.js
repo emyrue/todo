@@ -1,8 +1,7 @@
 import './style.css';
 import renew from './renew.svg';
 import enterKey from './return.svg';
-import List from './list.js';
-import makeNew, { createList, toDoList } from './add.js';
+import makeNew, { createList, toDoList, toDo } from './add.js';
 import editItems from './edit.js';
 import removeItem from './remove.js';
 
@@ -13,7 +12,7 @@ const refresh = new Image();
 refresh.src = renew;
 const enter = new Image();
 enter.src = enterKey;
-const toDo = new List();
+
 toDo.checkStorage();
 heading.appendChild(refresh);
 newItem.appendChild(enter);
