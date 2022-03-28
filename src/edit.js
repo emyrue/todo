@@ -1,11 +1,13 @@
-import { createList } from './add.js';
+import { createList, toDoList, display } from './add.js';
 import remove from './delete.svg';
 
 const trash = new Image();
 trash.src = remove;
+let editButtons;
+
 export default function editItems(toDo) {
-  const editButtons = document.querySelectorAll('.dots');
-  for (let i = 0; i < editButtons.length; i += 1) {
+  editButtons = document.querySelectorAll('.dots');
+  for (let i = 0; i < toDo.list.length; i += 1) {
     editButtons[i].addEventListener('click', () => {
       editButtons[i].parentElement.classList.add('color');
       editButtons[i].parentElement.innerHTML = `
@@ -21,7 +23,7 @@ export default function editItems(toDo) {
           if ((e.key === 'Enter') && input[j].value) {
             toDo.list[i].description = input[j].value;
             toDo.store();
-            createList(toDo);
+            window.location.reload();
           }
         });
       }
