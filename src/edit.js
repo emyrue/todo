@@ -1,12 +1,10 @@
-import { createList, toDoList, display } from './add.js';
 import remove from './delete.svg';
 
 const trash = new Image();
 trash.src = remove;
-let editButtons;
 
 export default function editItems(toDo) {
-  editButtons = document.querySelectorAll('.dots');
+  const editButtons = document.querySelectorAll('.dots');
   for (let i = 0; i < toDo.list.length; i += 1) {
     editButtons[i].addEventListener('click', () => {
       editButtons[i].parentElement.classList.add('color');
