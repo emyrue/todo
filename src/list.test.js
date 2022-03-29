@@ -3,7 +3,9 @@
  */
 
 const List = require('./list2.js');
+
 const createList = require('./createList.js');
+
 document.body.innerHTML = `
 <section class="to-do">
 <div class="heading">
@@ -47,20 +49,20 @@ describe('add and delete', () => {
   test('checking list elements', () => {
     testList.fixIndex();
     createList(testListElement, testList);
-    let todolist = document.querySelectorAll('.list-item');
+    const todolist = document.querySelectorAll('.list-item');
     expect(todolist.length).toBe(2);
   });
   test('Adding an item and checking HTML', () => {
     testList.add({ description: 'Socks1', completed: false, index: 2 });
     createList(testListElement, testList);
-    todolist = document.querySelectorAll('.list-item');
+    const todolist = document.querySelectorAll('.list-item');
     expect(todolist.length).toBe(3);
   });
   test('Removing an item and checking HTML', () => {
     testList.remove(0);
     testList.fixIndex();
     createList(testListElement, testList);
-    todolist = document.querySelectorAll('.list-item');
+    const todolist = document.querySelectorAll('.list-item');
     expect(todolist.length).toBe(2);
   });
 });
