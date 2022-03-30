@@ -8,7 +8,7 @@ const createList = require('./createList.js');
 
 const editItems = require('./editItems.js');
 
-const removeItem = require('./removeItems');
+const removeItem = require('./removeItems.js');
 
 document.body.innerHTML = `
 <section class="to-do">
@@ -25,7 +25,7 @@ document.body.innerHTML = `
 </section>
 `;
 const testListElement = document.querySelector('.list');
-let testList = new List();
+const testList = new List();
 jest.mock('./index');
 
 describe('add and delete', () => {
