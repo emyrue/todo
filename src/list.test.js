@@ -8,6 +8,8 @@ const createList = require('./createList.js');
 
 const editItems = require('./editItems.js');
 
+const removeItem = require('./removeItems');
+
 document.body.innerHTML = `
 <section class="to-do">
 <div class="heading">
@@ -76,5 +78,14 @@ describe('add and delete', () => {
     document.querySelectorAll('.edit')[0].dispatchEvent(keyEvent);
     createList(testListElement, testList);
     expect(testList.list[0].description).toBe('Shoes');
+  });
+  test('Changing completed status', () => {
+    removeItem(testList);
+    document.querySelectorAll('.checkbox')[0].click();
+    expect(testList.list[0].completed).toBeTruthy();
+  });
+  test('Clear completed items', () => {
+    document.querySelector('.clear').click();
+    expect(testList.list.length).toBe(1);
   });
 });
