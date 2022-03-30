@@ -1,4 +1,4 @@
-export default class List {
+class List {
   constructor() {
     this.list = [];
   }
@@ -41,3 +41,5 @@ export default class List {
     return JSON.parse(window.localStorage.getItem('list'));
   }
 }
+
+module.exports = List;

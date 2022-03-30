@@ -24,6 +24,14 @@ To get a local copy up and running follow these simple steps:
  - cd todo
  - open dist/index.html
 
+### Run Tests
+
+To run tests follow these steps:
+1. Open your terminal and navigate to the todo directory.
+3. Type these commands into your terminal: 
+ - npm install --save-dev jest
+ - npm run test
+
 ## Authors
 
 👤 **Author1**
