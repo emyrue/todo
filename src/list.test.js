@@ -6,6 +6,8 @@ const List = require('./list2.js');
 
 const createList = require('./createList.js');
 
+const editItems = require('./editItems.js');
+
 document.body.innerHTML = `
 <section class="to-do">
 <div class="heading">
