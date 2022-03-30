@@ -23,7 +23,7 @@ document.body.innerHTML = `
 </section>
 `;
 const testListElement = document.querySelector('.list');
-const testList = new List();
+let testList = new List();
 jest.mock('./index');
 
 describe('add and delete', () => {
@@ -66,5 +66,15 @@ describe('add and delete', () => {
     createList(testListElement, testList);
     const todolist = document.querySelectorAll('.list-item');
     expect(todolist.length).toBe(2);
+  });
+  test('Editing an item', () => {
+    editItems(testList);
+    document.querySelectorAll('.dots')[0].click();
+    document.querySelectorAll('.edit')[0].value = 'Shoes';
+    const keyEvent = new KeyboardEvent('keypress', { key: 'Enter' });
+    document.querySelectorAll('.edit')[0].focus();
+    document.querySelectorAll('.edit')[0].dispatchEvent(keyEvent);
+    createList(testListElement, testList);
+    expect(testList.list[0].description).toBe('Shoes');
   });
 });
