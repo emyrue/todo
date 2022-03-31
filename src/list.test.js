@@ -6,6 +6,10 @@ const List = require('./list2.js');
 
 const createList = require('./createList.js');
 
+const editItems = require('./editItems.js');
+
+const removeItem = require('./removeItems.js');
+
 document.body.innerHTML = `
 <section class="to-do">
 <div class="heading">
@@ -64,5 +68,24 @@ describe('add and delete', () => {
     createList(testListElement, testList);
     const todolist = document.querySelectorAll('.list-item');
     expect(todolist.length).toBe(2);
+  });
+  test('Editing an item', () => {
+    editItems(testList);
+    document.querySelectorAll('.dots')[0].click();
+    document.querySelectorAll('.edit')[0].value = 'Shoes';
+    const keyEvent = new KeyboardEvent('keypress', { key: 'Enter' });
+    document.querySelectorAll('.edit')[0].focus();
+    document.querySelectorAll('.edit')[0].dispatchEvent(keyEvent);
+    createList(testListElement, testList);
+    expect(testList.list[0].description).toBe('Shoes');
+  });
+  test('Changing completed status', () => {
+    removeItem(testList);
+    document.querySelectorAll('.checkbox')[0].click();
+    expect(testList.list[0].completed).toBeTruthy();
+  });
+  test('Clear completed items', () => {
+    document.querySelector('.clear').click();
+    expect(testList.list.length).toBe(1);
   });
 });
